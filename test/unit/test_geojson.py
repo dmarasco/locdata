@@ -1,6 +1,6 @@
 from locdata.dataset.geojson import GeoJsonDataset
 
-SOURCE = "data/osm_nodes_amnenities_dc_bbox.geojson"
+SOURCE = "data/osm_nodes_amenities_dc_bbox.geojson"
 CENTER = {"latitude": 38.882843, "longitude":-76.997509}
 FILTER_VALUES = {"amenity":["restaurant", "fast_food", "cafe", 'bar', "pub"]}
 
