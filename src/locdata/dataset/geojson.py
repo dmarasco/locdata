@@ -4,7 +4,6 @@ Module containing GeoJson Dataset
 import json
 from collections import defaultdict
 import pandas as pd
-from pandas.io.json import json_normalize
 from h3 import h3
 
 from .base import SpatialDataset
@@ -45,7 +44,7 @@ class GeoJsonDataset(SpatialDataset):
         with open(self.source) as f:
             stops_geodata = json.load(f)
 
-        self.df = pd.DataFrame(json_normalize(stops_geodata['features']))
+        self.df = pd.DataFrame(pd.json_normalize(stops_geodata['features']))
         self.drop_prefix("properties.")
 
         n_rows_orig = self.df.shape[0]
